@@ -2,54 +2,35 @@ package com.mishima.bookstore.dao.impl;
 
 import com.mishima.bookstore.dao.BookDao;
 import com.mishima.bookstore.model.Book;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 @Transactional
 public class BookDaoImpl implements BookDao {
+
+    @Autowired
+    SessionFactory sessionFactory;
+
     @Override
     public List<Book> getBooks() {
-        Book book1 = new Book();
-        book1.setArticle(13412);
-        book1.setName("The Shinning");
-        book1.setAuthor("S. King");
-        book1.setPrice(99.9);
-        book1.setGenre("Horror");
-
-        Book book2 = new Book();
-        book2.setArticle(13332);
-        book2.setName("Cradle for a cat");
-        book2.setAuthor("K. Vonnegut");
-        book2.setPrice(69.0);
-        book2.setGenre("Deep thoughts");
-
-        Book book3 = new Book();
-        book3.setArticle(12132);
-        book3.setName("Code Complete");
-        book3.setAuthor("S. McConell");
-        book3.setPrice(199.0);
-        book3.setGenre("Non fiction");
-
-        List<Book> books = new ArrayList<>();
-        books.add(book1);
-        books.add(book2);
-        books.add(book3);
-
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Book");
+        List<Book> books = query.list();
+        session.flush();
         return books;
     }
 
     @Override
-    public Book getBookByArticle(int article) throws IOException {
-        for (Book book : getBooks()) {
-            if (book.getArticle() == article) {
-                return book;
-            }
-        }
-        throw new IOException("Book doesn't exist by article " + article);
+    public Book getBookByArticle(int article) {
+        Session session = sessionFactory.getCurrentSession();
+        Book bookByArticle = (Book) session.get(Book.class, article);
+        return bookByArticle;
     }
 }
