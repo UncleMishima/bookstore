@@ -9,7 +9,7 @@
 .idea/
 
 # Maven
-.target/
+target/
 
 # Package Files #
 *.jar
