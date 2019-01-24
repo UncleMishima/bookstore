@@ -22,6 +22,7 @@
                 <th>Author</th>
                 <th>Genre</th>
                 <th>Price</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -31,7 +32,8 @@
                     <td>${book.name}</td>
                     <td>${book.author}</td>
                     <td>${book.genre}</td>
-                    <td>${book.price} USD</td>
+                    <td>${book.price} руб.</td>
+                    <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/>">Купить</a></td>
                 </tr>
             </c:forEach>
             </tbody>
