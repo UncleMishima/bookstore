@@ -5,5 +5,5 @@ import com.mishima.bookstore.model.User;
 
 public interface UserDao {
     boolean addUser(User user);
-    boolean updateCart(Cart cart);
+    User getUserById(int id);
 }
