@@ -20,14 +20,6 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean addUser(User user) {
-//        try {
-//            Session session = sessionFactory.getCurrentSession();
-//            session.persist(user);
-//            return true;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return false;
-//        }
         return DaoUtil.isObjectPersist(sessionFactory, user);
     }
 

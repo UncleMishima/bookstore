@@ -31,9 +31,9 @@
                     <td>${book.article}</td>
                     <td>${book.name}</td>
                     <td>${book.author}</td>
-                    <td>${book.genre}</td>
+                    <td><a href="<c:url value="/booklist/${book.genre}"/> ">${book.genre}</a></td>
                     <td>${book.price} руб.</td>
-                    <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/>">Купить</a></td>
+                    <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/> ">Купить</a></td>
                 </tr>
             </c:forEach>
             </tbody>

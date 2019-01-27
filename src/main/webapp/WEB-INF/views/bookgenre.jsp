@@ -2,28 +2,28 @@
 <%--
   Created by IntelliJ IDEA.
   User: Mikhail Sedov
-  Date: 15.01.2019
-  Time: 20:52
+  Date: 27.01.2019
+  Time: 12:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Books</title>
+    <title>Concrete book genre table</title>
 </head>
 <body>
     <div align="center">
-        <h3>Available our books!</h3>
+        <h3>Available our books</h3>
         <table>
             <thead>
-            <tr>
-                <th>Article</th>
-                <th>Name</th>
-                <th>Author</th>
-                <th>Genre</th>
-                <th>Price</th>
-                <th></th>
-            </tr>
+                <tr>
+                    <th>Article</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
             </thead>
             <tbody>
             <c:forEach items="${books}" var="book">
@@ -31,13 +31,16 @@
                     <td>${book.article}</td>
                     <td>${book.name}</td>
                     <td>${book.author}</td>
-                    <td><a href="<c:url value="/booklist/${book.genre}"/> ">${book.genre}</a></td>
+                    <td>${book.genre}</td>
                     <td>${book.price} руб.</td>
-                    <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/> ">Купить</a></td>
+                    <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/>">Купить</a></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
+        <form action="<c:url value="/booklist" /> ">
+            <input type="submit" value="Назад" />
+        </form>
     </div>
 </body>
 </html>
