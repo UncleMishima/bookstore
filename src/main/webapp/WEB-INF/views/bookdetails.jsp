@@ -17,6 +17,7 @@
         <b>Name:</b> ${book.name} <br>
         <b>Author:</b> ${book.author} <br>
         <b>Description:</b> ${book.description} <br>
+        <b>Quantity:</b> ${book.amountInStore} шт.<br>
         <b>Price:</b> ${book.price} руб.<br>
         <form action="<c:url value="/cart/show" /> ">
             <input type="submit" value="Добавить в корзину" />

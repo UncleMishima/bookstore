@@ -16,24 +16,26 @@
         <h3>Available our books!</h3>
         <table>
             <thead>
-            <tr>
-                <th>Article</th>
-                <th>Name</th>
-                <th>Author</th>
-                <th>Genre</th>
-                <th>Price</th>
-                <th></th>
-            </tr>
+                <tr>
+                    <th>Article</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
             </thead>
-            <tbody>
+            <tbody align="center">
             <c:forEach items="${books}" var="book">
                 <tr>
                     <td>${book.article}</td>
-                    <td>${book.name}</td>
+                    <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/> ">${book.name}</a></td>
                     <td>${book.author}</td>
                     <td><a href="<c:url value="/booklist/${book.genre}"/> ">${book.genre}</a></td>
+                    <td>${book.amountInStore} шт.</td>
                     <td>${book.price} руб.</td>
-                    <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/> ">Купить</a></td>
+                    <td><a href="<c:url value="/cart/show"/> ">Купить</a></td>
                 </tr>
             </c:forEach>
             </tbody>
