@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <security:http auto-config="true">
-        <security:intercept-url pattern="/booklist/**" access="hasRole('ROLE_USER')" />
+        <security:intercept-url pattern="/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
         <security:intercept-url pattern="/user/**" access="hasRole('ROLE_ADMIN')" />
         <security:csrf disabled="true" />
     </security:http>
@@ -15,9 +15,9 @@
             <security:jdbc-user-service
                 data-source-ref="dataSource"
                 users-by-username-query=
-                        "select first_name, password, enabled from user_detail where first_name = ?"
+                        "select email, password, enabled from user_detail where email = ?"
                 authorities-by-username-query=
-                        "select first_name, role from user_detail where first_name = ?" />
+                        "select email, role from user_detail where email = ?" />
         </security:authentication-provider>
     </security:authentication-manager>
 </beans>

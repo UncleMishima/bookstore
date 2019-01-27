@@ -19,25 +19,22 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Book</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total price</th>
-                        <th></th>
+                        <th>Книга</th>
+                        <th>Кол-во (шт.)</th>
+                        <th>Цена</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody align="center">
                     <c:forEach items="${cartLines}" var="cartLine">
                         <tr>
-                            <td>${cartLine.book}</td>
-                            <td>${cartLine.buyingPrice}</td>
+                            <td>${cartLine.book.author} - ${cartLine.book.name}</td>
                             <td>${cartLine.bookCount}</td>
                             <td>${cartLine.total} руб.</td>
-                            <td><a href="<c:url value="/book/bookdetails/${book.article}"/>">Купить</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
+                <b>Total price: </b> ${cart.totalPrice}
             </c:when>
             <c:otherwise>
                 <div>
@@ -46,5 +43,13 @@
             </c:otherwise>
         </c:choose>
     </div>
+    <form>
+        <form method="post" action="${pageContext.request.contextPath}/orderBooks/?code=${cart.id}">
+            <input type="submit" value="Заказать">
+        </form>
+        <form action="<c:url value="/booklist"/> ">
+            <input type="submit" value="Назад">
+        </form>
+    </form>
 </body>
 </html>

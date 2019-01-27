@@ -13,6 +13,13 @@
 </head>
 <body>
     <div align="center">
+        <c:if test="${pageContext.request.userPrincipal.name != null}">
+            <h3>${userModel.fullName} | <a href="<c:url value="/logout" />" >Logout</a><br>
+                Сумма заказа: ${userModel.cart.totalPrice}
+            </h3>
+        </c:if>
+    </div>
+    <div align="center">
         <h3>[${book.article}]: ${book.author} - ${book.name} details</h3>
         <b>Name:</b> ${book.name} <br>
         <b>Author:</b> ${book.author} <br>

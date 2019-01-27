@@ -36,4 +36,11 @@ public class UserDaoImpl implements UserDao {
         Query query = session.createQuery(" from User");
         return query.list();
     }
+
+    @Override
+    public User getUserByEmail(String email) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from User where email = :email", User.class);
+        return (User) query.setParameter("email", email).getSingleResult();
+    }
 }

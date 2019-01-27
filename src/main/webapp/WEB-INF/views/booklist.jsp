@@ -14,8 +14,8 @@
 <body>
     <div align="center">
         <c:if test="${pageContext.request.userPrincipal.name != null}">
-            <h3>Hello, ${pageContext.request.userPrincipal.name} |
-                <a href="<c:url value="/logout" />" >Logout</a>
+            <h3>${userModel.fullName} | <a href="<c:url value="/logout" />" >Logout</a><br>
+                Сумма заказа: ${userModel.cart.totalPrice}
             </h3>
         </c:if>
     </div>

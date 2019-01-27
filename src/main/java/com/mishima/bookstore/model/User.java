@@ -20,7 +20,7 @@ public class User {
     private String role;
     private boolean enabled = true;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Cart cart;
 
     public int getId() {

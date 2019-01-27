@@ -2,6 +2,7 @@ package com.mishima.bookstore.dao.impl;
 
 import com.mishima.bookstore.dao.BookDao;
 import com.mishima.bookstore.model.Book;
+import com.mishima.bookstore.util.DaoUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -37,5 +38,10 @@ public class BookDaoImpl implements BookDao {
     public Book getBookByArticle(int article) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(Book.class, article);
+    }
+
+    @Override
+    public boolean updateBook(Book book) {
+        return DaoUtil.isObjectUpdate(sessionFactory, book);
     }
 }

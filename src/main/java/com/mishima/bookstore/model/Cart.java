@@ -12,7 +12,7 @@ public class Cart {
     private User user;
 
     @Column(name = "total_price")
-    private double totalPrice;
+    private double totalPrice = 0.0;
 
     @Column(name = "cart_lines")
     private int cartLines;

@@ -15,7 +15,7 @@
     <c:choose>
         <c:when test="${pageContext.request.userPrincipal.name != null}">
             <h3>
-                Welcome, ${pageContext.request.userPrincipal.name} | <a href="<c:url value="/logout"/>">Logout</a>
+                Welcome, ${userModel.fullName} | <a href="<c:url value="/logout"/>">Logout</a>
                 <br> Let's shop a bit :)
             </h3>
         </c:when>

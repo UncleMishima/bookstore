@@ -8,5 +8,6 @@ import java.util.List;
 public interface UserDao {
     boolean addUser(User user);
     User getUserById(int id);
+    User getUserByEmail(String email);
     List<User> getAllUsers();
 }
