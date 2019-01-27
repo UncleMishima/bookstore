@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Mikhail Sedov
@@ -8,9 +9,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Home page</title>
+    <title>Welcome</title>
 </head>
 <body>
-    <h3>Welcome to my book store!</h3>
+    <c:choose>
+        <c:when test="${pageContext.request.userPrincipal.name != null}">
+            <h3>
+                Welcome, ${pageContext.request.userPrincipal.name} | <a href="<c:url value="/logout"/>">Logout</a>
+                <br> Let's shop a bit :)
+            </h3>
+        </c:when>
+        <c:otherwise>
+            <h3>Hello, stranger! <br> Authorize and look at our <a href="<c:url value="/booklist" />">books</a>! </h3>
+        </c:otherwise>
+    </c:choose>
 </body>
 </html>

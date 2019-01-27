@@ -40,10 +40,8 @@
                 </table>
             </c:when>
             <c:otherwise>
-                <div class="jumbotron">
-                    <div class="text-center">
-                        <h2>Cart is empty</h2>
-                    </div>
+                <div>
+                    s<h2>Cart is empty</h2>
                 </div>
             </c:otherwise>
         </c:choose>

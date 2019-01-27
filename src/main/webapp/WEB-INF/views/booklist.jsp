@@ -13,6 +13,13 @@
 </head>
 <body>
     <div align="center">
+        <c:if test="${pageContext.request.userPrincipal.name != null}">
+            <h3>Hello, ${pageContext.request.userPrincipal.name} |
+                <a href="<c:url value="/logout" />" >Logout</a>
+            </h3>
+        </c:if>
+    </div>
+    <div align="center">
         <h3>Available our books!</h3>
         <table>
             <thead>

@@ -33,7 +33,7 @@
                     <td>${user.lastName}</td>
                     <td>${user.email}</td>
                     <td>${user.role}</td>
-                    <td>${user.cart}</td>
+                    <td>${user.cart.id}</td>
                 </tr>
             </c:forEach>
             </tbody>

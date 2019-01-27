@@ -13,7 +13,7 @@
 </head>
 <body>
     <div align="center">
-        <h3>Books from ${bookGenre}</h3>
+        <h3>Books from ${bookGenre} genre</h3>
         <table>
             <thead>
                 <tr>
