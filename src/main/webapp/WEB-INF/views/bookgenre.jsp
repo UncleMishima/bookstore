@@ -9,11 +9,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Concrete book genre table</title>
+    <title>${bookGenre} genre</title>
 </head>
 <body>
     <div align="center">
-        <h3>Available our books</h3>
+        <h3>Books from ${bookGenre}</h3>
         <table>
             <thead>
                 <tr>

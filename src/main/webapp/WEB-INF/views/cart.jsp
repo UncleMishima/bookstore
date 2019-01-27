@@ -33,7 +33,7 @@
                             <td>${cartLine.buyingPrice}</td>
                             <td>${cartLine.bookCount}</td>
                             <td>${cartLine.total} руб.</td>
-                            <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/>">Купить</a></td>
+                            <td><a href="<c:url value="/book/bookdetails/${book.article}"/>">Купить</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>

@@ -27,17 +27,21 @@
                 </tr>
             </thead>
             <tbody align="center">
-            <c:forEach items="${books}" var="book">
-                <tr>
-                    <td>${book.article}</td>
-                    <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/> ">${book.name}</a></td>
-                    <td>${book.author}</td>
-                    <td><a href="<c:url value="/booklist/${book.genre}"/> ">${book.genre}</a></td>
-                    <td>${book.amountInStore} шт.</td>
-                    <td>${book.price} руб.</td>
-                    <td><a href="<c:url value="/cart/show"/> ">Купить</a></td>
-                </tr>
-            </c:forEach>
+                <c:forEach items="${books}" var="book">
+                    <tr>
+                        <td>${book.article}</td>
+                        <td><a href="<c:url value="/booklist/bookdetails/${book.article}"/> ">${book.name}</a></td>
+                        <td>${book.author}</td>
+                        <td><a href="<c:url value="/booklist/${book.genre}"/> ">${book.genre}</a></td>
+                        <td>${book.amountInStore} шт.</td>
+                        <td>${book.price} руб.</td>
+                        <td>
+                            <form method="post" action="${pageContext.request.contextPath}/buyBook/?code=${book.article}">
+                                <input type="submit" value="Купить">
+                            </form>
+                        </td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
     </div>

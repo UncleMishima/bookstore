@@ -14,10 +14,10 @@ public class UserController {
     @Autowired
     UserDao userDao;
 
-    @RequestMapping("/users")
+    @RequestMapping("/userlist")
     public String userlist(Model model) {
         model.addAttribute("users", userDao.getAllUsers());
-        return "users";
+        return "userlist";
     }
 
     //TODO Create add user form and get data from it
