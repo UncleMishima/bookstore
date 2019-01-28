@@ -9,25 +9,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Book details</title>
+    <title>О книге</title>
 </head>
 <body>
     <div align="center">
         <c:if test="${pageContext.request.userPrincipal.name != null}">
             <h3>${userModel.fullName} | <a href="<c:url value="/logout" />" >Logout</a><br>
-                Сумма заказа: ${userModel.cart.totalPrice}
+                <a href="<c:url value="/cart/show" />">Сумма заказа:</a> ${userModel.cart.totalPrice}
             </h3>
         </c:if>
     </div>
     <div align="center">
         <h3>[${book.article}]: ${book.author} - ${book.name} details</h3>
-        <b>Name:</b> ${book.name} <br>
-        <b>Author:</b> ${book.author} <br>
-        <b>Description:</b> ${book.description} <br>
-        <b>Quantity:</b> ${book.amountInStore} шт.<br>
-        <b>Price:</b> ${book.price} руб.<br>
-        <form action="<c:url value="/cart/show" /> ">
-            <input type="submit" value="Добавить в корзину" />
+        <b>Название:</b> ${book.name} <br>
+        <b>Автор:</b> ${book.author} <br>
+        <b>Описание:</b> ${book.description} <br>
+        <b>Количество:</b> ${book.amountInStore} шт.<br>
+        <b>Цена:</b> ${book.price} руб.<br>
+        <form method="post" action="${pageContext.request.contextPath}/buyBook/?code=${book.article}">
+            <input type="submit" value="Купить">
         </form>
         <form action="<c:url value="/booklist" /> ">
             <input type="submit" value="Назад" />

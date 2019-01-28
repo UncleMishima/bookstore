@@ -9,27 +9,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Books</title>
+    <title>Список книг</title>
 </head>
 <body>
     <div align="center">
         <c:if test="${pageContext.request.userPrincipal.name != null}">
             <h3>${userModel.fullName} | <a href="<c:url value="/logout" />" >Logout</a><br>
-                Сумма заказа: ${userModel.cart.totalPrice}
+                <a href="<c:url value="/cart/show" />">Сумма заказа:</a> ${userModel.cart.totalPrice}
             </h3>
         </c:if>
     </div>
     <div align="center">
-        <h3>Available our books!</h3>
+        <h3>Приобретайте наши книги!</h3>
         <table>
             <thead>
                 <tr>
-                    <th>Article</th>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Genre</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
+                    <th>Артикль</th>
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Жанр</th>
+                    <th>Количество (шт.)</th>
+                    <th>Цена</th>
                     <th></th>
                 </tr>
             </thead>

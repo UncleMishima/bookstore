@@ -20,7 +20,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean addUser(User user) {
-        return DaoUtil.isObjectPersist(sessionFactory, user);
+        return DaoUtil.isObjectPersisted(sessionFactory, user);
     }
 
     @Override

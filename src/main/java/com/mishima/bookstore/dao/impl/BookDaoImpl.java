@@ -22,7 +22,7 @@ public class BookDaoImpl implements BookDao {
     @Override
     public List<Book> getAllBooks() {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Book");
+        Query query = session.createQuery("from Book where amountInStore > 0");
         List<Book> books = query.list();
         return books;
     }
@@ -30,7 +30,7 @@ public class BookDaoImpl implements BookDao {
     @Override
     public List<Book> getAllBooksByGenre(String genre) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Book where genre = :genre", Book.class);
+        Query query = session.createQuery("from Book where genre = :genre and amountInStore > 0", Book.class);
         return query.setParameter("genre", genre).getResultList();
     }
 
@@ -42,6 +42,6 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public boolean updateBook(Book book) {
-        return DaoUtil.isObjectUpdate(sessionFactory, book);
+        return DaoUtil.isObjectUpdated(sessionFactory, book);
     }
 }

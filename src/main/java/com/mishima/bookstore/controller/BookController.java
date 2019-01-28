@@ -1,9 +1,11 @@
 package com.mishima.bookstore.controller;
 
 import com.mishima.bookstore.dao.BookDao;
+import com.mishima.bookstore.dao.CartDao;
 import com.mishima.bookstore.dao.CartLineDao;
 import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.*;
+import com.mishima.bookstore.util.DaoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,6 +28,9 @@ public class BookController {
 
     @Autowired
     CartLineDao cartLineDao;
+
+    @Autowired
+    CartDao cartDao;
 
     @Autowired
     HttpSession session;
@@ -60,18 +65,30 @@ public class BookController {
 
         CartLine cartLine = new CartLine();
         cartLine.setBook(book);
-        cartLine.setCartId(user.getCart().getId());
+
+        if (user.getCart() ==null) {
+            Cart cart = new Cart();
+            user.setCart(cart);
+        } else {
+            cartLine.setCartId(user.getCart().getId());
+        }
+
         cartLine.setAvailable(true);
         cartLine.setBuyingPrice(book.getPrice());
         cartLine.setBookCount(1);
         cartLine.setTotal(cartLine.getBookCount() * cartLine.getBuyingPrice());
         cartLineDao.add(cartLine);
 
+        Cart cart = user.getCart();
+        cart.setTotalPrice(DaoUtil.updateCartTotalPrice(cartLineDao.list(cart.getId())));
+        cartDao.updateCart(user.getCart());
+
         return "redirect:/booklist";
     }
 
     @RequestMapping({"/orderBooks"})
-    public String orderBooks(@RequestParam(value = "code") int code) {
+    public String orderBooks(@RequestParam(value = "code") int cartId) {
+        authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userDao.getUserByEmail(authentication.getName());
         List<CartLine> cartLineList = cartLineDao.list(user.getCart().getId());
 
@@ -79,7 +96,12 @@ public class BookController {
             Book book = cartLine.getBook();
             book.setAmountInStore(book.getAmountInStore() - cartLine.getBookCount());
             bookDao.updateBook(book);
+            cartLineDao.delete(cartLine);
         }
+
+        Cart cart = user.getCart();
+        cart.setTotalPrice(0.0);
+        cartDao.updateCart(cart);
 
         return "redirect:/booklist";
     }

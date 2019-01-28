@@ -15,7 +15,7 @@
     <div align="center">
         <c:if test="${pageContext.request.userPrincipal.name != null}">
             <h3>${userModel.fullName} | <a href="<c:url value="/logout" />" >Logout</a><br>
-                Сумма заказа: ${userModel.cart.totalPrice}
+                <a href="<c:url value="/cart/show" />">Сумма заказа:</a> ${userModel.cart.totalPrice}
             </h3>
         </c:if>
     </div>
@@ -24,11 +24,11 @@
         <table>
             <thead>
                 <tr>
-                    <th>Article</th>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Genre</th>
-                    <th>Price</th>
+                    <th>Артикль</th>
+                    <th>Нзавание</th>
+                    <th>Автор</th>
+                    <th>Жанр</th>
+                    <th>Цена</th>
                     <th></th>
                 </tr>
             </thead>
@@ -40,7 +40,11 @@
                     <td>${book.author}</td>
                     <td>${book.genre}</td>
                     <td>${book.price} руб.</td>
-                    <td><a href="<c:url value="/cart/show"/>">Купить</a></td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/buyBook/?code=${book.article}">
+                            <input type="submit" value="Купить">
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

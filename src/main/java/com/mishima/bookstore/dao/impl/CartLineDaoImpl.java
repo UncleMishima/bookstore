@@ -29,18 +29,18 @@ public class CartLineDaoImpl implements CartLineDao {
     @Override
     public boolean add(CartLine cartLine) {
 
-        return DaoUtil.isObjectPersist(sessionFactory, cartLine);
+        return DaoUtil.isObjectPersisted(sessionFactory, cartLine);
     }
 
     @Override
     public boolean update(CartLine cartLine) {
-        return DaoUtil.isObjectUpdate(sessionFactory, cartLine);
+        return DaoUtil.isObjectUpdated(sessionFactory, cartLine);
     }
 
     //TODO Implement it later
     @Override
     public boolean delete(CartLine cartLine) {
-        return false;
+        return DaoUtil.isObjectDeleted(sessionFactory, cartLine);
     }
 
     @Override
@@ -72,6 +72,6 @@ public class CartLineDaoImpl implements CartLineDao {
 
     @Override
     public boolean updateCart(Cart cart) {
-        return DaoUtil.isObjectUpdate(sessionFactory, cart);
+        return DaoUtil.isObjectUpdated(sessionFactory, cart);
     }
 }

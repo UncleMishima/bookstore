@@ -1,5 +1,6 @@
 package com.mishima.bookstore.controller;
 
+import com.mishima.bookstore.dao.CartDao;
 import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.Cart;
 import com.mishima.bookstore.model.User;
@@ -20,6 +21,9 @@ public class MainController {
     @Autowired
     UserDao userDao;
 
+    @Autowired
+    CartDao cartDao;
+
     UserModel userModel = null;
 
     @ModelAttribute("userModel")
@@ -37,8 +41,9 @@ public class MainController {
 
                 if (user.getCart() == null) {
                     Cart cart = new Cart();
-                    user.setCart(cart);
+                    cart.setUser(user);
                     userModel.setCart(cart);
+                    cartDao.addCart(userModel.getCart());
                 } else userModel.setCart(user.getCart());
 
                 session.setAttribute("userMode", userModel);

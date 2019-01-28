@@ -13,9 +13,9 @@
 </head>
 <body>
     <div align="center">
-        <h3>Cart</h3>
         <c:choose>
             <c:when test="${not empty cartLines}">
+                <h3>Корзина</h3>
                 <table>
                     <thead>
                     <tr>
@@ -38,18 +38,17 @@
             </c:when>
             <c:otherwise>
                 <div>
-                    s<h2>Cart is empty</h2>
+                    <h2>В корзине нет товаров</h2>
                 </div>
             </c:otherwise>
         </c:choose>
     </div>
-    <form>
-        <form method="post" action="${pageContext.request.contextPath}/orderBooks/?code=${cart.id}">
-            <input type="submit" value="Заказать">
-        </form>
-        <form action="<c:url value="/booklist"/> ">
-            <input type="submit" value="Назад">
-        </form>
+    <form method="post" action="${pageContext.request.contextPath}/orderBooks/?code=${userModel.cart.id}">
+        <input type="submit" value="Заказать">
     </form>
+    <form action="<c:url value="/booklist"/> ">
+        <input type="submit" value="Назад">
+    </form>
+
 </body>
 </html>
