@@ -1,10 +1,10 @@
 package com.mishima.bookstore.controller;
 
-import com.mishima.bookstore.dao.BookDao;
-import com.mishima.bookstore.dao.CartDao;
-import com.mishima.bookstore.dao.CartLineDao;
-import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.*;
+import com.mishima.bookstore.service.BookService;
+import com.mishima.bookstore.service.CartLineService;
+import com.mishima.bookstore.service.CartService;
+import com.mishima.bookstore.service.UserService;
 import com.mishima.bookstore.util.DaoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -21,47 +21,47 @@ import java.util.List;
 @Controller
 public class BookController {
     @Autowired
-    BookDao bookDao;
+    BookService bookService;
 
     @Autowired
-    UserDao userDao;
+    UserService userService;
 
     @Autowired
-    CartLineDao cartLineDao;
+    CartLineService cartLineService;
 
     @Autowired
-    CartDao cartDao;
+    CartService cartService;
 
     @Autowired
     HttpSession session;
 
     Authentication authentication = null;
 
-    @RequestMapping("/booklist")
+    @RequestMapping(value = {"/", "/booklist"})
     public String bookList(Model model) {
-        model.addAttribute("books", bookDao.getAllBooks());
+        model.addAttribute("books", bookService.getAllBooks());
         return "booklist";
     }
 
     @RequestMapping("/booklist/{bookGenre}")
     public String bookGenre(@PathVariable String bookGenre, Model model) {
         model.addAttribute("bookGenre", bookGenre);
-        model.addAttribute("books", bookDao.getAllBooksByGenre(bookGenre));
+        model.addAttribute("books", bookService.getAllBooksByGenre(bookGenre));
         return "bookgenre";
     }
 
     @RequestMapping("/booklist/bookdetails/{bookArticle}")
     public String bookDetails(@PathVariable int bookArticle, Model model) {
-        model.addAttribute("book", bookDao.getBookByArticle(bookArticle));
+        model.addAttribute("book", bookService.getBookByArticle(bookArticle));
         return "bookdetails";
     }
 
     @RequestMapping({"/buyBook"})
     public String buyBook(@RequestParam(value = "code") int bookArticle) {
-        Book book = bookDao.getBookByArticle(bookArticle);
+        Book book = bookService.getBookByArticle(bookArticle);
 
         authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = userDao.getUserByEmail(authentication.getName());
+        User user = userService.getUserByEmail(authentication.getName());
 
         CartLine cartLine = new CartLine();
         cartLine.setBook(book);
@@ -77,31 +77,31 @@ public class BookController {
         cartLine.setBuyingPrice(book.getPrice());
         cartLine.setBookCount(1);
         cartLine.setTotal(cartLine.getBookCount() * cartLine.getBuyingPrice());
-        cartLineDao.add(cartLine);
+        cartLineService.add(cartLine);
 
         Cart cart = user.getCart();
-        cart.setTotalPrice(DaoUtil.updateCartTotalPrice(cartLineDao.list(cart.getId())));
-        cartDao.updateCart(user.getCart());
+        cart.setTotalPrice(DaoUtil.updateCartTotalPrice(cartLineService.list(cart.getId())));
+        cartService.updateCart(user.getCart());
 
         return "redirect:/booklist";
     }
 
     @RequestMapping({"/orderBooks"})
-    public String orderBooks(@RequestParam(value = "code") int cartId) {
+    public String orderBooks() {
         authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = userDao.getUserByEmail(authentication.getName());
-        List<CartLine> cartLineList = cartLineDao.list(user.getCart().getId());
+        User user = userService.getUserByEmail(authentication.getName());
+        List<CartLine> cartLineList = cartLineService.list(user.getCart().getId());
 
         for (CartLine cartLine : cartLineList) {
             Book book = cartLine.getBook();
             book.setAmountInStore(book.getAmountInStore() - cartLine.getBookCount());
-            bookDao.updateBook(book);
-            cartLineDao.delete(cartLine);
+            bookService.updateBook(book);
+            cartLineService.delete(cartLine);
         }
 
         Cart cart = user.getCart();
         cart.setTotalPrice(0.0);
-        cartDao.updateCart(cart);
+        cartService.updateCart(cart);
 
         return "redirect:/booklist";
     }

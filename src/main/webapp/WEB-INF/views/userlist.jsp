@@ -9,23 +9,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>User list</title>
+    <title>Пользователи</title>
 </head>
 <body>
     <div align="center">
-        <h3>User list</h3>
+        <h3>Список пользователей</h3>
         <table>
             <thead>
             <tr>
                 <th>Id</th>
-                <th>First name</th>
-                <th>Last name</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
                 <th>Email</th>
-                <th>Role</th>
-                <th>Cart Id</th>
+                <th>Роль</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody align="canter">
             <c:forEach items="${users}" var="user">
                 <tr>
                     <td>${user.id}</td>
@@ -33,7 +32,6 @@
                     <td>${user.lastName}</td>
                     <td>${user.email}</td>
                     <td>${user.role}</td>
-                    <td>${user.cart.id}</td>
                 </tr>
             </c:forEach>
             </tbody>

@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>${bookGenre} genre</title>
+    <title>${bookGenre}</title>
 </head>
 <body>
     <div align="center">
@@ -20,7 +20,7 @@
         </c:if>
     </div>
     <div align="center">
-        <h3>Books from ${bookGenre} genre</h3>
+        <h3>>Книги жанра ${bookGenre}</h3>
         <table>
             <thead>
                 <tr>
@@ -32,7 +32,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody align="center">
             <c:forEach items="${books}" var="book">
                 <tr>
                     <td>${book.article}</td>

@@ -1,10 +1,11 @@
 package com.mishima.bookstore.controller;
 
-import com.mishima.bookstore.dao.CartDao;
 import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.Cart;
 import com.mishima.bookstore.model.User;
 import com.mishima.bookstore.model.UserModel;
+import com.mishima.bookstore.service.CartService;
+import com.mishima.bookstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,10 +20,10 @@ public class MainController {
     HttpSession session;
 
     @Autowired
-    UserDao userDao;
+    UserService userService;
 
     @Autowired
-    CartDao cartDao;
+    CartService cartService;
 
     UserModel userModel = null;
 
@@ -30,7 +31,7 @@ public class MainController {
     public UserModel getUserModel() {
         if (session.getAttribute("userModel") == null) {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            User user = userDao.getUserByEmail(authentication.getName());
+            User user = userService.getUserByEmail(authentication.getName());
 
             if (user != null) {
                 userModel = new UserModel();
@@ -43,7 +44,7 @@ public class MainController {
                     Cart cart = new Cart();
                     cart.setUser(user);
                     userModel.setCart(cart);
-                    cartDao.addCart(userModel.getCart());
+                    cartService.addCart(userModel.getCart());
                 } else userModel.setCart(user.getCart());
 
                 session.setAttribute("userMode", userModel);

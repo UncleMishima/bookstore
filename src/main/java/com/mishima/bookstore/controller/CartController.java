@@ -1,9 +1,9 @@
 package com.mishima.bookstore.controller;
 
-import com.mishima.bookstore.dao.BookDao;
 import com.mishima.bookstore.dao.CartLineDao;
 import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.*;
+import com.mishima.bookstore.service.UserService;
 import com.mishima.bookstore.util.DaoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -23,10 +23,7 @@ public class CartController {
     CartLineDao cartLineDao;
 
     @Autowired
-    UserDao userDao;
-
-    @Autowired
-    BookDao bookDao;
+    UserService userService;
 
     @Autowired
     HttpSession session;
@@ -34,7 +31,7 @@ public class CartController {
     @RequestMapping("/show")
     public String showCart(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = userDao.getUserByEmail(authentication.getName());
+        User user = userService.getUserByEmail(authentication.getName());
         Cart cart = user.getCart();
         List<CartLine> cartLineList = cartLineDao.list(user.getCart().getId());
         cart.setTotalPrice(DaoUtil.updateCartTotalPrice(cartLineList));

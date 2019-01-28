@@ -20,7 +20,7 @@
                     <thead>
                     <tr>
                         <th>Книга</th>
-                        <th>Кол-во (шт.)</th>
+                        <th>Количество (шт.)</th>
                         <th>Цена</th>
                     </tr>
                     </thead>
@@ -43,12 +43,13 @@
             </c:otherwise>
         </c:choose>
     </div>
-    <form method="post" action="${pageContext.request.contextPath}/orderBooks/?code=${userModel.cart.id}">
-        <input type="submit" value="Заказать">
-    </form>
-    <form action="<c:url value="/booklist"/> ">
-        <input type="submit" value="Назад">
-    </form>
-
+    <div align="center">
+        <form method="post" action="${pageContext.request.contextPath}/orderBooks">
+            <input type="submit" value="Заказать">
+        </form>
+        <form action="<c:url value="/booklist"/> ">
+            <input type="submit" value="Назад">
+        </form>
+    </div>
 </body>
 </html>

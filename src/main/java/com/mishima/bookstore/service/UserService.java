@@ -1,10 +1,10 @@
-package com.mishima.bookstore.dao;
+package com.mishima.bookstore.service;
 
 import com.mishima.bookstore.model.User;
 
 import java.util.List;
 
-public interface UserDao {
+public interface UserService {
     boolean addUser(User user);
     User getUserById(int id);
     User getUserByEmail(String email);

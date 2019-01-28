@@ -32,7 +32,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody align="center">
             <c:forEach items="${books}" var="book">
                 <tr>
                     <td>${book.article}</td>
