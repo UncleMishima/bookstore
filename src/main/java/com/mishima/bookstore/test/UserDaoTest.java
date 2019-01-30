@@ -1,21 +1,27 @@
 package com.mishima.bookstore.test;
 
-import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.User;
+import com.mishima.bookstore.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
 
 import static org.springframework.test.util.AssertionErrors.assertEquals;
 
+@ContextConfiguration({"file:/src/main/webapp/WEB-INF/application-context.xml"})
 public class UserDaoTest {
     @Autowired
-    private UserDao userDao;
+    private UserService userService;
 
-    //TODO: Always NPE, need to fix
+    @Autowired
+    ApplicationContext applicationContext;
+
     @Test
     public void testAddUser() {
 
         User user = new User();
+        user.setId(7);
         user.setRole("USER");
         user.setFirstName("Name");
         user.setLastName("Last name");
@@ -23,6 +29,6 @@ public class UserDaoTest {
         user.setEmail("dgsdhd");
         user.setPassword("112243");
 
-        assertEquals("User successfully added to DB", true, userDao.addUser(user));
+        assertEquals("User successfully added to DB", true, userService.addUser(user));
     }
 }

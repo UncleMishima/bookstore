@@ -2,7 +2,7 @@ package com.mishima.bookstore.dao.impl;
 
 import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.User;
-import com.mishima.bookstore.util.DaoUtil;
+import com.mishima.bookstore.util.DaoDataHandler;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +14,12 @@ import java.util.List;
 @Repository
 @Transactional
 public class UserDaoImpl implements UserDao {
-
     @Autowired
     SessionFactory sessionFactory;
 
     @Override
     public boolean addUser(User user) {
-        return DaoUtil.isObjectPersisted(sessionFactory, user);
+        return DaoDataHandler.isObjectPersisted(sessionFactory, user);
     }
 
     @Override

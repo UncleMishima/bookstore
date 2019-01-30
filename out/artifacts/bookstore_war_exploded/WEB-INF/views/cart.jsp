@@ -34,7 +34,10 @@
                     </c:forEach>
                     </tbody>
                 </table>
-                <b>Total price: </b> ${cart.totalPrice}
+                <b>Total price: </b> ${userModel.cart.totalPrice}
+                <form method="post" action="${pageContext.request.contextPath}/orderBooks">
+                    <input type="submit" value="Заказать">
+                </form>
             </c:when>
             <c:otherwise>
                 <div>
@@ -44,9 +47,6 @@
         </c:choose>
     </div>
     <div align="center">
-        <form method="post" action="${pageContext.request.contextPath}/orderBooks">
-            <input type="submit" value="Заказать">
-        </form>
         <form action="<c:url value="/booklist"/> ">
             <input type="submit" value="Назад">
         </form>

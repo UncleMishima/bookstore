@@ -3,22 +3,21 @@ package com.mishima.bookstore.service.impl;
 import com.mishima.bookstore.dao.CartLineDao;
 import com.mishima.bookstore.model.Cart;
 import com.mishima.bookstore.model.CartLine;
+import com.mishima.bookstore.model.UserModel;
 import com.mishima.bookstore.service.CartLineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Service
 public class CartLineServiceImpl implements CartLineService {
-
     @Autowired
     CartLineDao cartLineDao;
 
-    @Override
-    public CartLine get(int id) {
-        return cartLineDao.get(id);
-    }
+    @Autowired
+    HttpSession session;
 
     @Override
     public boolean add(CartLine cartLine) {
@@ -36,22 +35,13 @@ public class CartLineServiceImpl implements CartLineService {
     }
 
     @Override
-    public List<CartLine> list(int cartId) {
-        return cartLineDao.list(cartId);
+    public List<CartLine> listOfAvailable() {
+        Cart cart = this.getCart();
+        return cartLineDao.listOfAvailable(cart.getId());
     }
 
-    @Override
-    public List<CartLine> listAvailable(int cartId) {
-        return cartLineDao.listAvailable(cartId);
-    }
-
-    @Override
-    public CartLine getByCartAndBook(int cartId, int bookId) {
-        return cartLineDao.getByCartAndBook(cartId, bookId);
-    }
-
-    @Override
-    public boolean updateCart(Cart cart) {
-        return cartLineDao.updateCart(cart);
+    private Cart getCart() {
+        UserModel userModel = (UserModel)session.getAttribute("userModel");
+        return userModel.getCart();
     }
 }

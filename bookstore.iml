@@ -24,6 +24,10 @@
           <dependency>web application context</dependency>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/security-config.xml</file>
         </fileset>
+        <fileset id="fileset3" name="Test Application Context" removed="false">
+          <dependency>web application context</dependency>
+          <file>file://$MODULE_DIR$/src/test-application-context.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>

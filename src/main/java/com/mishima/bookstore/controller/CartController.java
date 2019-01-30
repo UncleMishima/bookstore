@@ -1,18 +1,13 @@
 package com.mishima.bookstore.controller;
 
-import com.mishima.bookstore.dao.CartLineDao;
-import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.*;
+import com.mishima.bookstore.service.CartLineService;
 import com.mishima.bookstore.service.UserService;
-import com.mishima.bookstore.util.DaoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -20,24 +15,15 @@ import java.util.List;
 public class CartController {
 
     @Autowired
-    CartLineDao cartLineDao;
+    CartLineService cartLineService;
 
     @Autowired
     UserService userService;
 
-    @Autowired
-    HttpSession session;
-
     @RequestMapping("/show")
     public String showCart(Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getUserByEmail(authentication.getName());
-        Cart cart = user.getCart();
-        List<CartLine> cartLineList = cartLineDao.list(user.getCart().getId());
-        cart.setTotalPrice(DaoUtil.updateCartTotalPrice(cartLineList));
+        List<CartLine> cartLineList = cartLineService.listOfAvailable();
         model.addAttribute("cartLines", cartLineList);
-        model.addAttribute("cart", user.getCart());
-
         return "cart";
     }
 }

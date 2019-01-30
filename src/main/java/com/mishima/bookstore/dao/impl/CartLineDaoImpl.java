@@ -1,9 +1,8 @@
 package com.mishima.bookstore.dao.impl;
 
 import com.mishima.bookstore.dao.CartLineDao;
-import com.mishima.bookstore.model.Cart;
 import com.mishima.bookstore.model.CartLine;
-import com.mishima.bookstore.util.DaoUtil;
+import com.mishima.bookstore.util.DaoDataHandler;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,62 +15,32 @@ import java.util.List;
 @Repository
 @Transactional
 public class CartLineDaoImpl implements CartLineDao {
-
     @Autowired
     SessionFactory sessionFactory;
 
     @Override
-    public CartLine get(int id) {
-        Session session = sessionFactory.getCurrentSession();
-        return session.get(CartLine.class, id);
-    }
-
-    @Override
     public boolean add(CartLine cartLine) {
 
-        return DaoUtil.isObjectPersisted(sessionFactory, cartLine);
+        return DaoDataHandler.isObjectPersisted(sessionFactory, cartLine);
     }
 
     @Override
     public boolean update(CartLine cartLine) {
-        return DaoUtil.isObjectUpdated(sessionFactory, cartLine);
+        return DaoDataHandler.isObjectUpdated(sessionFactory, cartLine);
     }
 
-    //TODO Implement it later
     @Override
     public boolean delete(CartLine cartLine) {
-        return DaoUtil.isObjectDeleted(sessionFactory, cartLine);
+        return DaoDataHandler.isObjectDeleted(sessionFactory, cartLine);
     }
 
     @Override
-    public List<CartLine> list(int cartId) {
-        Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery(" from CartLine where cartId = :cartId", CartLine.class);
-        return query.setParameter("cartId", cartId).getResultList();
-    }
-
-    @Override
-    public List<CartLine> listAvailable(int cartId) {
+    public List<CartLine> listOfAvailable(int cartId) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery(" from CartLine where cartId = :cartId and isAvailable = :isAvailable", CartLine.class);
         return query
                 .setParameter("cartId", cartId)
                 .setParameter("isAvailable", true)
                 .getResultList();
-    }
-
-    @Override
-    public CartLine getByCartAndBook(int cartId, int bookId) {
-        Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery(" from CartLine where cartId = :cartId and book.article = :bookId", CartLine.class);
-        return (CartLine) query
-                .setParameter("cartId", cartId)
-                .setParameter("bookId", bookId)
-                .getSingleResult();
-    }
-
-    @Override
-    public boolean updateCart(Cart cart) {
-        return DaoUtil.isObjectUpdated(sessionFactory, cart);
     }
 }

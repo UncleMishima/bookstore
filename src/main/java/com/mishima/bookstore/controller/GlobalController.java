@@ -1,6 +1,5 @@
 package com.mishima.bookstore.controller;
 
-import com.mishima.bookstore.dao.UserDao;
 import com.mishima.bookstore.model.Cart;
 import com.mishima.bookstore.model.User;
 import com.mishima.bookstore.model.UserModel;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import javax.servlet.http.HttpSession;
 
 @ControllerAdvice
-public class MainController {
+public class GlobalController {
     @Autowired
     HttpSession session;
 
@@ -47,7 +46,7 @@ public class MainController {
                     cartService.addCart(userModel.getCart());
                 } else userModel.setCart(user.getCart());
 
-                session.setAttribute("userMode", userModel);
+                session.setAttribute("userModel", userModel);
                 return userModel;
             }
         }

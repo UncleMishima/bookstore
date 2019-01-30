@@ -2,7 +2,7 @@ package com.mishima.bookstore.dao.impl;
 
 import com.mishima.bookstore.dao.BookDao;
 import com.mishima.bookstore.model.Book;
-import com.mishima.bookstore.util.DaoUtil;
+import com.mishima.bookstore.util.DaoDataHandler;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -15,7 +15,6 @@ import java.util.List;
 @Repository
 @Transactional
 public class BookDaoImpl implements BookDao {
-
     @Autowired
     SessionFactory sessionFactory;
 
@@ -42,6 +41,6 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public boolean updateBook(Book book) {
-        return DaoUtil.isObjectUpdated(sessionFactory, book);
+        return DaoDataHandler.isObjectUpdated(sessionFactory, book);
     }
 }

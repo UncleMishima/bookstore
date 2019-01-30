@@ -5,17 +5,14 @@ import com.mishima.bookstore.service.BookService;
 import com.mishima.bookstore.service.CartLineService;
 import com.mishima.bookstore.service.CartService;
 import com.mishima.bookstore.service.UserService;
-import com.mishima.bookstore.util.DaoUtil;
+import com.mishima.bookstore.util.DaoDataHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -32,11 +29,6 @@ public class BookController {
     @Autowired
     CartService cartService;
 
-    @Autowired
-    HttpSession session;
-
-    Authentication authentication = null;
-
     @RequestMapping(value = {"/", "/booklist"})
     public String bookList(Model model) {
         model.addAttribute("books", bookService.getAllBooks());
@@ -44,7 +36,7 @@ public class BookController {
     }
 
     @RequestMapping("/booklist/{bookGenre}")
-    public String bookGenre(@PathVariable String bookGenre, Model model) {
+    public String bookGenreList(@PathVariable String bookGenre, Model model) {
         model.addAttribute("bookGenre", bookGenre);
         model.addAttribute("books", bookService.getAllBooksByGenre(bookGenre));
         return "bookgenre";
@@ -59,28 +51,12 @@ public class BookController {
     @RequestMapping({"/buyBook"})
     public String buyBook(@RequestParam(value = "code") int bookArticle) {
         Book book = bookService.getBookByArticle(bookArticle);
-
-        authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getUserByEmail(authentication.getName());
-
-        CartLine cartLine = new CartLine();
-        cartLine.setBook(book);
-
-        if (user.getCart() ==null) {
-            Cart cart = new Cart();
-            user.setCart(cart);
-        } else {
-            cartLine.setCartId(user.getCart().getId());
-        }
-
-        cartLine.setAvailable(true);
-        cartLine.setBuyingPrice(book.getPrice());
-        cartLine.setBookCount(1);
-        cartLine.setTotal(cartLine.getBookCount() * cartLine.getBuyingPrice());
+        User user = userService.getCurrentUser();
+        CartLine cartLine = DaoDataHandler.createNewCartLine(book, user);
         cartLineService.add(cartLine);
 
         Cart cart = user.getCart();
-        cart.setTotalPrice(DaoUtil.updateCartTotalPrice(cartLineService.list(cart.getId())));
+        cart.setTotalPrice(DaoDataHandler.updateCartTotalPrice(cartLineService.listOfAvailable()));
         cartService.updateCart(user.getCart());
 
         return "redirect:/booklist";
@@ -88,9 +64,8 @@ public class BookController {
 
     @RequestMapping({"/orderBooks"})
     public String orderBooks() {
-        authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getUserByEmail(authentication.getName());
-        List<CartLine> cartLineList = cartLineService.list(user.getCart().getId());
+        User user = userService.getCurrentUser();
+        List<CartLine> cartLineList = cartLineService.listOfAvailable();
 
         for (CartLine cartLine : cartLineList) {
             Book book = cartLine.getBook();
