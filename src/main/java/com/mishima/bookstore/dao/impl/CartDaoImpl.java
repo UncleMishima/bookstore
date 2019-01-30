@@ -2,7 +2,7 @@ package com.mishima.bookstore.dao.impl;
 
 import com.mishima.bookstore.dao.CartDao;
 import com.mishima.bookstore.model.Cart;
-import com.mishima.bookstore.util.DaoDataHandler;
+import com.mishima.bookstore.util.DaoHandler;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,11 +16,11 @@ public class CartDaoImpl implements CartDao {
 
     @Override
     public boolean addCart(Cart cart) {
-        return DaoDataHandler.isObjectPersisted(sessionFactory, cart);
+        return DaoHandler.isObjectPersisted(sessionFactory, cart);
     }
 
     @Override
     public boolean updateCart(Cart cart) {
-        return DaoDataHandler.isObjectUpdated(sessionFactory, cart);
+        return DaoHandler.isObjectUpdated(sessionFactory, cart);
     }
 }

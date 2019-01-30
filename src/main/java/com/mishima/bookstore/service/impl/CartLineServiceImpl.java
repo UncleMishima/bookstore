@@ -1,6 +1,8 @@
 package com.mishima.bookstore.service.impl;
 
+import com.mishima.bookstore.dao.BookDao;
 import com.mishima.bookstore.dao.CartLineDao;
+import com.mishima.bookstore.model.Book;
 import com.mishima.bookstore.model.Cart;
 import com.mishima.bookstore.model.CartLine;
 import com.mishima.bookstore.model.UserModel;
@@ -14,10 +16,10 @@ import java.util.List;
 @Service
 public class CartLineServiceImpl implements CartLineService {
     @Autowired
-    CartLineDao cartLineDao;
+    private CartLineDao cartLineDao;
 
     @Autowired
-    HttpSession session;
+    private HttpSession session;
 
     @Override
     public boolean add(CartLine cartLine) {
@@ -35,6 +37,11 @@ public class CartLineServiceImpl implements CartLineService {
     }
 
     @Override
+    public CartLine getCartLineByBookArticle(int bookArticle) {
+        return cartLineDao.getCartLineByBookArticle(bookArticle);
+    }
+
+    @Override
     public List<CartLine> listOfAvailable() {
         Cart cart = this.getCart();
         return cartLineDao.listOfAvailable(cart.getId());
@@ -43,5 +50,16 @@ public class CartLineServiceImpl implements CartLineService {
     private Cart getCart() {
         UserModel userModel = (UserModel)session.getAttribute("userModel");
         return userModel.getCart();
+    }
+
+    @Override
+    public boolean isBookAlreadyInCart(Book book) {
+        for (CartLine cartLine : listOfAvailable()) {
+            Book bookInList = cartLine.getBook();
+            if (book.getArticle() == bookInList.getArticle()) {
+                return true;
+            }
+        }
+        return false;
     }
 }

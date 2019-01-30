@@ -44,7 +44,9 @@ public class GlobalController {
                     cart.setUser(user);
                     userModel.setCart(cart);
                     cartService.addCart(userModel.getCart());
-                } else userModel.setCart(user.getCart());
+                } else {
+                    userModel.setCart(user.getCart());
+                }
 
                 session.setAttribute("userModel", userModel);
                 return userModel;
@@ -53,5 +55,4 @@ public class GlobalController {
 
         return (UserModel) session.getAttribute("userModel");
     }
-
 }

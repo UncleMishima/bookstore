@@ -8,5 +8,6 @@ public interface CartLineDao {
     boolean add(CartLine cartLine);
     boolean update(CartLine cartLine);
     boolean delete(CartLine cartLine);
+    CartLine getCartLineByBookArticle(int bookArticle);
     List<CartLine> listOfAvailable(int cartId);
 }

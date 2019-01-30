@@ -59,6 +59,7 @@ public class CartLine implements Serializable {
 
     public void setBookCount(int bookCount) {
         this.bookCount = bookCount;
+        calculateCartLineTotalPrice();
     }
 
     public double getTotal() {
@@ -83,5 +84,9 @@ public class CartLine implements Serializable {
 
     public void setAvailable(boolean available) {
         isAvailable = available;
+    }
+
+    private void calculateCartLineTotalPrice() {
+        this.total = this.getBuyingPrice() * this.getBookCount();
     }
 }

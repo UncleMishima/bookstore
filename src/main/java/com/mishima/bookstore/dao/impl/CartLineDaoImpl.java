@@ -2,7 +2,7 @@ package com.mishima.bookstore.dao.impl;
 
 import com.mishima.bookstore.dao.CartLineDao;
 import com.mishima.bookstore.model.CartLine;
-import com.mishima.bookstore.util.DaoDataHandler;
+import com.mishima.bookstore.util.DaoHandler;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +21,26 @@ public class CartLineDaoImpl implements CartLineDao {
     @Override
     public boolean add(CartLine cartLine) {
 
-        return DaoDataHandler.isObjectPersisted(sessionFactory, cartLine);
+        return DaoHandler.isObjectPersisted(sessionFactory, cartLine);
     }
 
     @Override
     public boolean update(CartLine cartLine) {
-        return DaoDataHandler.isObjectUpdated(sessionFactory, cartLine);
+        return DaoHandler.isObjectUpdated(sessionFactory, cartLine);
     }
 
     @Override
     public boolean delete(CartLine cartLine) {
-        return DaoDataHandler.isObjectDeleted(sessionFactory, cartLine);
+        return DaoHandler.isObjectDeleted(sessionFactory, cartLine);
+    }
+
+    @Override
+    public CartLine getCartLineByBookArticle(int bookArticle) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from CartLine where book.article = :bookArticle", CartLine.class);
+        return (CartLine) query
+                .setParameter("bookArticle", bookArticle)
+                .getSingleResult();
     }
 
     @Override

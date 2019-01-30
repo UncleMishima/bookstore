@@ -1,11 +1,14 @@
 package com.mishima.bookstore.controller;
 
-import com.mishima.bookstore.model.*;
+import com.mishima.bookstore.model.Book;
+import com.mishima.bookstore.model.CartLine;
+import com.mishima.bookstore.model.Cart;
+import com.mishima.bookstore.model.User;
 import com.mishima.bookstore.service.BookService;
 import com.mishima.bookstore.service.CartLineService;
 import com.mishima.bookstore.service.CartService;
 import com.mishima.bookstore.service.UserService;
-import com.mishima.bookstore.util.DaoDataHandler;
+import com.mishima.bookstore.util.CartHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,11 +55,19 @@ public class BookController {
     public String buyBook(@RequestParam(value = "code") int bookArticle) {
         Book book = bookService.getBookByArticle(bookArticle);
         User user = userService.getCurrentUser();
-        CartLine cartLine = DaoDataHandler.createNewCartLine(book, user);
-        cartLineService.add(cartLine);
+
+        if (cartLineService.isBookAlreadyInCart(book)) {
+            CartLine cartLine = cartLineService.getCartLineByBookArticle(bookArticle);
+            cartLine.setBookCount(cartLine.getBookCount() + 1);
+            cartLineService.update(cartLine);
+        } else {
+            CartLine cartLine = CartHandler.createNewCartLine(book, user);
+            cartLineService.add(cartLine);
+        }
 
         Cart cart = user.getCart();
-        cart.setTotalPrice(DaoDataHandler.updateCartTotalPrice(cartLineService.listOfAvailable()));
+        double newTotalPrice = CartHandler.updateCartTotalPrice(cartLineService.listOfAvailable());
+        cart.setTotalPrice(newTotalPrice);
         cartService.updateCart(user.getCart());
 
         return "redirect:/booklist";
