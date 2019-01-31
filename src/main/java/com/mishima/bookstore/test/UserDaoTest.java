@@ -1,24 +1,33 @@
-package com.mishima.bookstore.test;
-
 import com.mishima.bookstore.model.User;
 import com.mishima.bookstore.service.UserService;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.springframework.test.util.AssertionErrors.assertEquals;
 
-@ContextConfiguration({"file:/src/main/webapp/WEB-INF/application-context.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(
+        locations = "file:/src/main/webapp/WEB-INF/application-context.xml"//,
+        //classes = {UserServiceImpl.class, UserDao.class, User.class}
+)
 public class UserDaoTest {
-    @Autowired
+
     private UserService userService;
 
     @Autowired
-    ApplicationContext applicationContext;
+    ApplicationContext context;
+
+//    @BeforeClass
+//    public static void init() {
+//    }
 
     @Test
     public void testAddUser() {
+        userService = (UserService) context.getBean("userService");
 
         User user = new User();
         user.setId(7);

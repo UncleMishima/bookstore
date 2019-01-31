@@ -20,7 +20,7 @@
         </c:if>
     </div>
     <div align="center">
-        <h3>>Книги жанра ${bookGenre}</h3>
+        <h3>Книги жанра ${bookGenre}</h3>
         <table>
             <thead>
                 <tr>

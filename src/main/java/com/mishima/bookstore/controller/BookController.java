@@ -68,7 +68,7 @@ public class BookController {
         Cart cart = user.getCart();
         double newTotalPrice = CartHandler.updateCartTotalPrice(cartLineService.listOfAvailable());
         cart.setTotalPrice(newTotalPrice);
-        cartService.updateCart(user.getCart());
+        cartService.updateCart(cart);
 
         return "redirect:/booklist";
     }

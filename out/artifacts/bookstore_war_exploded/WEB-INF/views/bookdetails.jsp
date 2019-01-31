@@ -20,7 +20,7 @@
         </c:if>
     </div>
     <div align="center">
-        <h3>[${book.article}]: ${book.author} - ${book.name} details</h3>
+        <h3>[${book.article}]: ${book.author} - ${book.name}</h3>
         <b>Название:</b> ${book.name} <br>
         <b>Автор:</b> ${book.author} <br>
         <b>Описание:</b> ${book.description} <br>

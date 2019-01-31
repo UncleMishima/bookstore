@@ -34,7 +34,7 @@
                     </c:forEach>
                     </tbody>
                 </table>
-                <b>Total price: </b> ${userModel.cart.totalPrice}
+                <br><b>Total price: </b> ${userModel.cart.totalPrice}<br>
                 <form method="post" action="${pageContext.request.contextPath}/orderBooks">
                     <input type="submit" value="Заказать">
                 </form>
