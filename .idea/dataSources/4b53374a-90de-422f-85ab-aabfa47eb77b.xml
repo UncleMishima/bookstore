@@ -63,7 +63,7 @@
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_6CFE5950_6BBC_472D_94F3_C4951A96DF84)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_8BD18244_6F06_4F81_B80B_C531EFDDF9CD)</DefaultExpression>
     </column>
     <column id="19" parent="6" name="CART_LINES">
       <Position>2</Position>
@@ -103,7 +103,7 @@
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_980C5CBC_B959_4020_B2C0_6666C616C35E)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_8A457BBB_E71A_47BC_8FA3_949A16B3AAB4)</DefaultExpression>
     </column>
     <column id="27" parent="7" name="BOOK_COUNT">
       <Position>2</Position>
@@ -156,7 +156,7 @@
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_464EF063_65A8_4F28_AE65_17A467C51B81)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_D6A9479D_7E05_4128_AE8E_52D417FA65F1)</DefaultExpression>
     </column>
     <column id="38" parent="8" name="EMAIL">
       <Position>2</Position>

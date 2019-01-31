@@ -1,3 +1,5 @@
+package com.mishima.bookstore.dao;
+
 import com.mishima.bookstore.model.User;
 import com.mishima.bookstore.service.UserService;
 import org.junit.Test;
