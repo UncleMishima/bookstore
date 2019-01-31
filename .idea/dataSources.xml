@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="BookstoreDB" uuid="4b53374a-90de-422f-85ab-aabfa47eb77b">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:~/BookstoreDB</jdbc-url>
+    </data-source>
+  </component>
+</project>
