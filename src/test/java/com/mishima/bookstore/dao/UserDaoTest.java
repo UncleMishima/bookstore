@@ -1,45 +1,44 @@
 package com.mishima.bookstore.dao;
 
-import com.mishima.bookstore.model.User;
 import com.mishima.bookstore.service.UserService;
+import com.mishima.bookstore.service.impl.UserServiceImpl;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
-import static org.springframework.test.util.AssertionErrors.assertEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
+@WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
-        locations = "file:/src/main/webapp/WEB-INF/application-context.xml"//,
-        //classes = {UserServiceImpl.class, UserDao.class, User.class}
+        locations = {
+                "file:/home/msedov/my_projects/bookstore/src/main/webapp/WEB-INF/application-context.xml",
+                "file:/home/msedov/my_projects/bookstore/src/main/webapp/WEB-INF/dispatcher-servlet.xml"
+        }
 )
 public class UserDaoTest {
+    private static final String TEST_USER_EMAIL = "alexalisson@gmail.com";
+    private static final String TEST_USER_FIRST_NAME = "Alex";
 
     private UserService userService;
 
     @Autowired
-    ApplicationContext context;
+    private ApplicationContext context;
 
-//    @BeforeClass
-//    public static void init() {
-//    }
+    @Before
+    public void testContext() {
+        userService = context.getBean(UserServiceImpl.class);
+        assertNotNull(userService);
+    }
 
     @Test
-    public void testAddUser() {
-        userService = (UserService) context.getBean("userService");
-
-        User user = new User();
-        user.setId(7);
-        user.setRole("USER");
-        user.setFirstName("Name");
-        user.setLastName("Last name");
-        user.setEnabled(true);
-        user.setEmail("dgsdhd");
-        user.setPassword("112243");
-
-        assertEquals("User successfully added to DB", true, userService.addUser(user));
+    public void testGetUserByEmail() {
+        assertEquals("Failed to get user by email", TEST_USER_FIRST_NAME, userService.getUserByEmail(TEST_USER_EMAIL).getFirstName());
     }
 }

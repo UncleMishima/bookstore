@@ -15,6 +15,11 @@ public class BookServiceImpl implements BookService {
     BookDao bookDao;
 
     @Override
+    public boolean addBook(Book book) {
+        return bookDao.addBook(book);
+    }
+
+    @Override
     public List<Book> getAllBooks() {
         return bookDao.getAllBooks();
     }
@@ -32,5 +37,10 @@ public class BookServiceImpl implements BookService {
     @Override
     public boolean updateBook(Book book) {
         return bookDao.updateBook(book);
+    }
+
+    @Override
+    public boolean deleteBookByArticle(int article) {
+        return bookDao.deleteBookByArticle(article);
     }
 }

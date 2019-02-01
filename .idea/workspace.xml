@@ -7,9 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bfe0e6a-c2b9-4227-b99b-7ba061901bc3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/BookDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/bookstore_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/bookstore_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/bookstore_war_exploded/WEB-INF/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/bookstore_war_exploded/WEB-INF/views/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/bookstore_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/bookstore_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/BookDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/impl/BookDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/impl/BookDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/UserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mishima/bookstore/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mishima/bookstore/dao/BookDao.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +57,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/BookController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/UserDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+            <state relative-caret-position="174">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,46 +70,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/GlobalController.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/BookDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/UserDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bookgenre.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bookdetails.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            <state relative-caret-position="75">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -131,8 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/DaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/test-application-context.xml" />
         <option value="$PROJECT_DIR$/src/test/java/DaoTest.java" />
         <option value="$PROJECT_DIR$/bookstore.iml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
@@ -152,16 +121,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/util/EntityDataHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/util/DaoUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/BookDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/impl/CartDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/impl/BookDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/impl/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/CartController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/util/DaoDataHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/util/DaoHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/BookService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/BookServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/GlobalController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/CartLineService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/CartLineServiceImpl.java" />
@@ -182,6 +147,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/UserDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/BookService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/BookDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/impl/BookDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/BookServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/BookDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/UserDaoTest.java" />
       </list>
     </option>
   </component>
@@ -226,8 +197,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,6 +248,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bookstore" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bookstore" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bookstore" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -294,33 +284,43 @@
               <item name="bookstore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookstore" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookstore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bookstore" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookstore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bookstore" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookstore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookstore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -331,13 +331,13 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548947855024" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549023025896" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2239521" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -361,10 +361,31 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.UserDaoTest">
+    <configuration name="BookDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mishima.bookstore.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mishima.bookstore.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.mishima.bookstore.dao.BookDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bookstore" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserDaoTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mishima.bookstore.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mishima.bookstore.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.mishima.bookstore.dao.UserDaoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -445,12 +466,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserDaoTest" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.14" />
+      <item itemvalue="JUnit.UserDaoTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserDaoTest" />
+        <item itemvalue="JUnit.BookDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -591,45 +613,45 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserDaoTest - 2019.01.31 at 16h 45m 43s.xml">
+    <history-entry file="BookDaoTest - 2019.02.01 at 14h 49m 33s.xml">
+      <configuration name="BookDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookDaoTest - 2019.02.01 at 14h 49m 56s.xml">
+      <configuration name="BookDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookDaoTest - 2019.02.01 at 14h 54m 24s.xml">
+      <configuration name="BookDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookDaoTest - 2019.02.01 at 14h 55m 27s.xml">
+      <configuration name="BookDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookDaoTest - 2019.02.01 at 14h 55m 50s.xml">
+      <configuration name="BookDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookDaoTest - 2019.02.01 at 14h 57m 50s.xml">
+      <configuration name="BookDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookDaoTest - 2019.02.01 at 14h 58m 57s.xml">
+      <configuration name="BookDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookDaoTest - 2019.02.01 at 15h 00m 51s.xml">
+      <configuration name="BookDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest - 2019.02.01 at 15h 03m 04s.xml">
       <configuration name="UserDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 16h 46m 02s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 16h 47m 35s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 16h 48m 51s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 16h 52m 45s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 18h 14m 33s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 18h 15m 20s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 18h 16m 08s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 18h 16m 35s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest - 2019.01.31 at 18h 17m 25s.xml">
+    <history-entry file="UserDaoTest - 2019.02.01 at 15h 08m 43s.xml">
       <configuration name="UserDaoTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120000000" />
+    <option name="totallyTimeSpent" value="129107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-2" width="1920" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21558164" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21771611" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -640,7 +662,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40083945" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40083945" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39874083" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -650,7 +672,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.15492958" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.15424974" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.29066107" />
@@ -729,90 +751,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="No commit" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/access/ExceptionTranslationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/session/SessionManagementFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/authentication/AnonymousAuthenticationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/servletapi/SecurityContextHolderAwareRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/savedrequest/RequestCacheAwareFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/authentication/ui/DefaultLoginPageGeneratingFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/authentication/logout/LogoutFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.8.RELEASE/spring-web-4.3.8.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.8.RELEASE/spring-web-4.3.8.RELEASE.jar!/org/springframework/web/filter/DelegatingFilterProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.8.RELEASE/spring-security-web-4.2.8.RELEASE.jar!/org/springframework/security/web/context/SecurityContextPersistenceFilter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -874,7 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4b53374a-90de-422f-85ab-aabfa47eb77b/database/BOOKSTOREDB/schema/PUBLIC/table/USER_DETAIL" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4b53374a-90de-422f-85ab-aabfa47eb77b/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -895,7 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4b53374a-90de-422f-85ab-aabfa47eb77b/database/BOOKSTOREDB/schema/PUBLIC/table/BOOK" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/model/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -917,30 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/CartLineServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="40" column="65" lean-forward="true" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/CartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/CartServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/booklist.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -955,16 +867,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/BookDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/BookDaoTest.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1000,55 +903,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bookdetails.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bookgenre.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
+        <state relative-caret-position="330">
           <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/BookController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/GlobalController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/UserDaoTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/test/UserDaoTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bookdetails.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/CartServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/CartLineServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="40" column="65" lean-forward="true" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/CartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/controller/BookController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.8.RELEASE/spring-test-4.3.8.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/BookDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/dao/impl/BookDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="53" column="90" selection-start-line="53" selection-start-column="90" selection-end-line="53" selection-end-column="90" />
+          <folding>
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/impl/BookServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
+          <folding>
+            <element signature="e#1028#1029#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4b53374a-90de-422f-85ab-aabfa47eb77b/database/BOOKSTOREDB/schema/PUBLIC/table/BOOK">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.8.RELEASE/spring-test-4.3.8.RELEASE.jar!/org/springframework/test/util/AssertionErrors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4b53374a-90de-422f-85ab-aabfa47eb77b/database/BOOKSTOREDB/schema/PUBLIC/table/USER_DETAIL">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishima/bookstore/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/BookDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mishima/bookstore/dao/UserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,11 +1136,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|bookstore</last-edited>
+          <last-edited>bookstore</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2239521" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -19,6 +19,11 @@ public class BookDaoImpl implements BookDao {
     SessionFactory sessionFactory;
 
     @Override
+    public boolean addBook(Book book) {
+        return DaoHandler.isObjectPersisted(sessionFactory, book);
+    }
+
+    @Override
     public List<Book> getAllBooks() {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Book where amountInStore > 0");
@@ -42,5 +47,10 @@ public class BookDaoImpl implements BookDao {
     @Override
     public boolean updateBook(Book book) {
         return DaoHandler.isObjectUpdated(sessionFactory, book);
+    }
+
+    @Override
+    public boolean deleteBookByArticle(int article) {
+        return DaoHandler.isObjectDeleted(sessionFactory, this.getBookByArticle(article));
     }
 }
