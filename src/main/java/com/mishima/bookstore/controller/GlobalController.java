@@ -28,31 +28,31 @@ public class GlobalController {
 
     @ModelAttribute("userModel")
     public UserModel getUserModel() {
-        if (session.getAttribute("userModel") == null) {
-            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            User user = userService.getUserByEmail(authentication.getName());
+        if (session.getAttribute("userModel") != null) {
+            return (UserModel) session.getAttribute("userModel");
+        }
+        return createUserModel();
+    }
 
-            if (user != null) {
-                userModel = new UserModel();
-                userModel.setId(user.getId());
-                userModel.setEmail(user.getEmail());
-                userModel.setFullName(user.getFirstName() + " " + user.getLastName());
-                userModel.setRole(user.getRole());
+    private UserModel createUserModel() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.getUserByEmail(authentication.getName());
+        userModel = new UserModel();
+        userModel.setId(user.getId());
+        userModel.setEmail(user.getEmail());
+        userModel.setFullName(user.getFirstName() + " " + user.getLastName());
+        userModel.setRole(user.getRole());
 
-                if (user.getCart() == null) {
-                    Cart cart = new Cart();
-                    cart.setUser(user);
-                    userModel.setCart(cart);
-                    cartService.addCart(userModel.getCart());
-                } else {
-                    userModel.setCart(user.getCart());
-                }
-
-                session.setAttribute("userModel", userModel);
-                return userModel;
-            }
+        if (user.getCart() == null) {
+            Cart cart = new Cart();
+            cart.setUser(user);
+            userModel.setCart(cart);
+            cartService.addCart(userModel.getCart());
+        } else {
+            userModel.setCart(user.getCart());
         }
 
-        return (UserModel) session.getAttribute("userModel");
+        session.setAttribute("userModel", userModel);
+        return userModel;
     }
 }

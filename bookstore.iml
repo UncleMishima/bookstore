@@ -27,6 +27,11 @@
         <fileset id="fileset3" name="Test Application Context" removed="false">
           <dependency>web application context</dependency>
           <file>file://$MODULE_DIR$/src/test-application-context.xml</file>
+          <file>file://$MODULE_DIR$/src/test/resources/test-application-context.xml</file>
+        </fileset>
+        <fileset id="fileset4" name="Test Dispatcher Servlet" removed="false">
+          <dependency>fileset</dependency>
+          <file>file://$MODULE_DIR$/src/test/resources/test-dispatcher-servlet.xml</file>
         </fileset>
       </configuration>
     </facet>

@@ -19,8 +19,8 @@ import static org.springframework.test.util.AssertionErrors.assertEquals;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
         locations = {
-                "file:/home/msedov/my_projects/bookstore/src/main/webapp/WEB-INF/application-context.xml",
-                "file:/home/msedov/my_projects/bookstore/src/main/webapp/WEB-INF/dispatcher-servlet.xml"
+                "classpath:test-application-context.xml",
+                "classpath:test-dispatcher-servlet.xml"
         }
 )
 public class BookDaoTest {
